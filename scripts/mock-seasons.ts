@@ -72,7 +72,7 @@ async function bootstrap() {
         await redisService.hIncrBy(metaKey, 'totalScore', s.currentScore);
       }
       console.log(`✅ Created: [${s.status}] ${s.name}`);
-    } catch (e) {
+    } catch (e: any) {
       console.error(`❌ Error creating ${s.name}:`, e.message);
     }
   }
